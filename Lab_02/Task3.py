@@ -38,6 +38,14 @@ def findMiddleNode(head):
     Time Complexity O(n), Extra Space Complexity O(1).
     """
     # Write your solution here:
+    prev_node = head
+    after_node = head
+
+    while after_node is not None and after_node.next is not None:
+        prev_node = prev_node.next
+        after_node = after_node.next.next
+
+    return prev_node
 
 
 HEAD = generator()

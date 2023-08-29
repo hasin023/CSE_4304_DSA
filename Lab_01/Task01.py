@@ -1,30 +1,16 @@
-def SortArray(newArray, array):
-    for i in range(LengthofArray(array)):
-        newArray.append(FindMinimum(array))
-        array.remove(FindMinimum(array))
-
-    return newArray
-
-
-def LengthofArray(array):
-
-    length = 0
-    for i in array:
-        length += 1
-
-    return length
+def insertion_sort(nums):
+    for i in range(1, len(nums)):
+        key = nums[i]
+        j = i - 1
+        while j >= 0 and key < nums[j]:
+            nums[j + 1] = nums[j]
+            j -= 1
+        nums[j + 1] = key
 
 
-def FindMinimum(array):
-    
-    # TODO: Implement this function
-    
-    
+nums = [int(x) for x in input("Enter space-separated integers: ").split()]
 
 
-if __name__ == "__main__":
+insertion_sort(nums)
 
-    Sorted_Array = []
-    SortArray(Sorted_Array, [8, 7, 2, 5, 3, 1, 8, 5])
-
-    print(Sorted_Array)
+print("Sorted array:", nums)
